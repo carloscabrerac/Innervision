@@ -4,7 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O'NEILL CHICLAYO — Surf & Lifestyle</title>
-<meta name="description" content="Tienda de surf y lifestyle en Chiclayo. Oakley, O'Neill, Dragon, Arnette, Bolle, VEECE, Reef, Quiksilver y Roxy. Av. Santa Victoria 452. Envíos a todo el Perú.">
+<meta name="description" content="Tienda de surf y lifestyle en Chiclayo. Oakley, O'Neill, Dragon, Arnette, Bollé, VEECE, Reef, Quiksilver y Roxy. Av. Santa Victoria 452. Envíos a todo el Perú.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icono.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0B0B0B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
+<meta property="og:site_name" content="O'Neill Chiclayo">
+<meta property="og:url" content="https://carloscabrerac.github.io/Innervision/">
+<meta property="og:title" content="O'Neill Chiclayo — Lentes, ropa de baño y surf">
+<meta property="og:description" content="637 productos originales de Oakley, O'Neill, Dragon, VEECE y Reef. Av. Santa Victoria 452, Chiclayo. Atendemos de 10:30 a.m. a 8:30 p.m. Envíos a todo el Perú.">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0617/8180/3180/files/Banner_Shopify_3.jpg?width=1200">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="480">
+<meta property="og:image:alt" content="Modelos con ropa O'Neill y lentes de sol">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -217,6 +232,11 @@ section:first-child{border-top:0}
 .cc small{display:block;font-size:13px;color:var(--g1);font-weight:400;margin-top:8px;line-height:1.6}
 .pend{display:inline-block;border:1px dashed var(--g2);padding:4px 10px;font-size:13px;
  font-weight:700;letter-spacing:.08em;color:var(--g1)}
+.horas{display:flex;align-items:center;gap:18px;margin:14px 0 6px}
+.horas b{display:block;font-size:31px;font-weight:900;letter-spacing:-.045em;line-height:1}
+.horas em{display:block;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+ color:var(--g1);margin-top:7px;font-style:normal}
+.horas .sep{flex:0 0 20px;height:1px;background:var(--n)}
 
 footer{background:var(--n);color:var(--g2);padding:52px 0 30px;font-size:13.5px}
 .fgrid{display:grid;gap:30px}
@@ -262,7 +282,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-<div class="aviso">Envíos a todo el Perú &nbsp;·&nbsp; <b>Hasta 60% de descuento</b> &nbsp;·&nbsp; Av. Santa Victoria 452, Chiclayo</div>
+<div class="aviso"><b>Atendemos de 10:30 a.m. a 8:30 p.m.</b> &nbsp;·&nbsp; Av. Santa Victoria 452, Chiclayo &nbsp;·&nbsp; Envíos a todo el Perú</div>
 
 <nav>
   <div class="wrap nav-in">
@@ -305,6 +325,7 @@ footer a:hover{color:#fff}
       </div>
       <div class="fcol"><h4>Comprar</h4><p id="fsec"></p></div>
       <div class="fcol"><h4>Contacto</h4><p>Av. Santa Victoria 452<br>Chiclayo, Perú<br>
+        10:30 a.m. — 8:30 p.m.<br>
         <a href="https://wa.me/51996113704">996 113 704</a><br>
         <a href="mailto:oneillcix@hotmail.com">oneillcix@hotmail.com</a><br>
         <a href="#/tienda">La tienda</a></p></div>
@@ -493,6 +514,7 @@ function vHome(){
     </div>
     <div>
       <div class="dato" style="border-top:0"><b>Tienda</b><span>Av. Santa Victoria 452, Chiclayo</span></div>
+      <div class="dato"><b>Horario</b><span>10:30 a.m. a 8:30 p.m.</span></div>
       <div class="dato"><b>WhatsApp</b><span>996 113 704</span></div>
       <div class="dato"><b>Envíos</b><span>A todo el Perú, coordinados por WhatsApp</span></div>
       <div class="dato"><b>Pago</b><span>Boleta o factura a tu nombre</span></div>
@@ -630,8 +652,13 @@ function vTienda(){
       <div class="cc"><span class="lbl">WhatsApp</span><p>996 113 704</p>
         <small>Te confirmamos stock, talla y te lo separamos.</small>
         <div class="pbtns"><a class="btn b-wa" href="${WA}${encodeURIComponent('Hola, quiero consultar por un producto')}">${waSvg} Escribir ahora</a></div></div>
-      <div class="cc"><span class="lbl">Horarios</span><p><span class="pend">Por confirmar</span></p>
-        <small>Este dato no existe en la web actual. Es de lo que más preguntan por WhatsApp: ponerlo ahorra decenas de mensajes al mes.</small></div>
+      <div class="cc"><span class="lbl">Horarios</span>
+        <div class="horas">
+          <div><b>10:30</b><em>a.m. abrimos</em></div>
+          <div class="sep"></div>
+          <div><b>8:30</b><em>p.m. cerramos</em></div>
+        </div>
+        <small>Dentro de ese horario te atendemos en tienda y por WhatsApp. Si nos escribes fuera de hora, te respondemos apenas abrimos.</small></div>
     </div>
     <div class="cgrid" style="margin-bottom:76px">
       <div class="cc"><span class="lbl">Envíos</span><p>A todo el Perú</p>
