@@ -1,0 +1,84 @@
+name: Descargar fotos del catalogo
+
+# Baja las fotos de los productos desde el CDN de Shopify y las guarda
+# dentro de este repositorio, para que la pagina no dependa de la tienda.
+# Se dispara solo cuando cambia lista-fotos.txt, o a mano desde Actions.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'lista-fotos.txt'
+      - '.github/workflows/descargar-fotos.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: descargar-fotos
+  cancel-in-progress: false
+
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar las fotos que falten
+        run: |
+          set -u
+          BASE="https://cdn.shopify.com/s/files/1/0617/8180/3180"
+          ANCHO=1000
+          mkdir -p fotos/files fotos/products
+
+          bajar() {
+            ruta="$1"
+            destino="fotos/$ruta"
+            # si ya existe y pesa algo, no la vuelve a bajar
+            if [ -s "$destino" ]; then
+              echo "ok-cache $ruta"
+              return 0
+            fi
+            mkdir -p "$(dirname "$destino")"
+            if curl -sfL --retry 3 --retry-delay 2 --max-time 60 \
+                 "$BASE/$ruta?width=$ANCHO" -o "$destino.tmp"; then
+              if [ -s "$destino.tmp" ]; then
+                mv "$destino.tmp" "$destino"
+                echo "ok $ruta"
+                return 0
+              fi
+            fi
+            rm -f "$destino.tmp"
+            echo "FALLO $ruta" >> fallos.txt
+            return 0
+          }
+          export -f bajar
+          export BASE ANCHO
+
+          : > fallos.txt
+          # 8 descargas en paralelo
+          tr -d '\r' < lista-fotos.txt | grep -v '^[[:space:]]*$' \
+            | xargs -I{} -P 8 bash -c 'bajar "$@"' _ {} > /dev/null
+
+          echo "=== Resultado ==="
+          echo "archivos descargados: $(find fotos -type f | wc -l)"
+          echo "peso total: $(du -sh fotos | cut -f1)"
+          if [ -s fallos.txt ]; then
+            echo "FALLARON $(wc -l < fallos.txt):"
+            cat fallos.txt
+          else
+            echo "sin fallos"
+            rm -f fallos.txt
+          fi
+
+      - name: Guardar en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotos fallos.txt 2>/dev/null || git add fotos
+          if git diff --cached --quiet; then
+            echo "No hay fotos nuevas que guardar."
+          else
+            git commit -m "Guarda las fotos del catalogo en el repositorio"
+            git push
+          fi
