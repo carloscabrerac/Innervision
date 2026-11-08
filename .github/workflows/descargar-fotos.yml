@@ -71,6 +71,22 @@ jobs:
             rm -f fallos.txt
           fi
 
+      - name: Descargar la foto de portada en grande
+        run: |
+          set -u
+          mkdir -p fotos/portada
+          if [ ! -s fotos/portada/banner.jpg ]; then
+            curl -sfL --retry 3 --max-time 90 \
+              "https://cdn.shopify.com/s/files/1/0617/8180/3180/files/Banner_Shopify_3.jpg?width=2000" \
+              -o fotos/portada/banner.jpg
+          fi
+          if [ ! -s fotos/portada/preview.jpg ]; then
+            curl -sfL --retry 3 --max-time 90 \
+              "https://cdn.shopify.com/s/files/1/0617/8180/3180/files/Banner_Shopify_3.jpg?width=1200" \
+              -o fotos/portada/preview.jpg
+          fi
+          ls -lh fotos/portada
+
       - name: Guardar en el repositorio
         run: |
           git config user.name "github-actions[bot]"
