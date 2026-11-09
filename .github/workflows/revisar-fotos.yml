@@ -1,0 +1,73 @@
+name: Revisar que no haya fotos rotas
+
+# Pide al sitio publicado, una por una, todas las fotos que la pagina
+# nombra, y falla si alguna no responde. Asi nos enteramos nosotros y no
+# un cliente. Corre en cada cambio de la pagina y a mano desde Actions.
+#
+# Nacio de un error real: un paso automatico renombro 50 fotos y la
+# pagina siguio pidiendolas con el nombre viejo. Se veian 50 huecos.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'index.html'
+      - 'fotos/**'
+  schedule:
+    - cron: '37 13 * * 1'   # lunes, para que no se nos pase
+
+permissions:
+  contents: read
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Esperar a que el sitio publique el cambio
+        run: sleep 90
+
+      - name: Pedir todas las fotos al sitio en vivo
+        run: |
+          python3 - <<'PY'
+          import re, sys, urllib.parse, urllib.request
+          from concurrent.futures import ThreadPoolExecutor
+
+          SITIO = 'https://innervisionpe.github.io/'
+          html = open('index.html', encoding='utf-8').read()
+
+          # Las del catalogo viven en el JSON incrustado; las de la portada
+          # estan escritas a mano en el HTML. Las dos formas, de una vez.
+          rutas = set(re.findall(r'"((?:files|products)/[^"]+?\.(?:jpg|jpeg|png|webp))"', html))
+          rutas = {'fotos/' + r for r in rutas}
+          rutas |= set(re.findall(r'(fotos/[^"?\s]+?\.(?:jpg|jpeg|png|webp))', html))
+
+          if len(rutas) < 500:
+              print(f'ALTO: solo encontre {len(rutas)} fotos en index.html.')
+              print('Deberian ser mas de 600. Algo se rompio al construir la pagina.')
+              sys.exit(1)
+
+          def pedir(r):
+              url = SITIO + urllib.parse.quote(r)
+              try:
+                  p = urllib.request.Request(url, method='HEAD',
+                                             headers={'User-Agent': 'revisor-oneill'})
+                  return r, urllib.request.urlopen(p, timeout=30).status
+              except Exception as e:
+                  return r, getattr(e, 'code', str(e))
+
+          malas = []
+          with ThreadPoolExecutor(10) as ex:
+              for r, c in ex.map(pedir, sorted(rutas)):
+                  if c != 200:
+                      malas.append((r, c))
+
+          print(f'revisadas {len(rutas)} fotos del sitio en vivo')
+          if malas:
+              print(f'ROTAS {len(malas)}:')
+              for r, c in malas:
+                  print(f'  {c}  {r}')
+              sys.exit(1)
+          print('todas responden 200: no hay ninguna foto rota')
+          PY
