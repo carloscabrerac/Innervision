@@ -1,0 +1,1091 @@
+{
+ "acc-otros": {
+  "todo": {
+   "productos": 11,
+   "hojas": [
+    "tallas/acc-otros-todo-1.jpg"
+   ]
+  },
+  "Única": {
+   "productos": 2,
+   "hojas": [
+    "tallas/acc-otros-unica-1.jpg"
+   ]
+  }
+ },
+ "aquashoes": {
+  "28": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-28-1.jpg"
+   ]
+  },
+  "30": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-30-1.jpg"
+   ]
+  },
+  "32": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-32-1.jpg"
+   ]
+  },
+  "34": {
+   "productos": 2,
+   "hojas": [
+    "tallas/aquashoes-34-1.jpg"
+   ]
+  },
+  "35": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-35-1.jpg"
+   ]
+  },
+  "36": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-36-1.jpg"
+   ]
+  },
+  "37": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-37-1.jpg"
+   ]
+  },
+  "38": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-38-1.jpg"
+   ]
+  },
+  "41": {
+   "productos": 2,
+   "hojas": [
+    "tallas/aquashoes-41-1.jpg"
+   ]
+  },
+  "44": {
+   "productos": 1,
+   "hojas": [
+    "tallas/aquashoes-44-1.jpg"
+   ]
+  }
+ },
+ "bano": {
+  "todo": {
+   "productos": 1,
+   "hojas": [
+    "tallas/bano-todo-1.jpg"
+   ]
+  },
+  "30": {
+   "productos": 14,
+   "hojas": [
+    "tallas/bano-30-1.jpg",
+    "tallas/bano-30-2.jpg"
+   ]
+  },
+  "32": {
+   "productos": 11,
+   "hojas": [
+    "tallas/bano-32-1.jpg"
+   ]
+  },
+  "34": {
+   "productos": 10,
+   "hojas": [
+    "tallas/bano-34-1.jpg"
+   ]
+  },
+  "36": {
+   "productos": 16,
+   "hojas": [
+    "tallas/bano-36-1.jpg",
+    "tallas/bano-36-2.jpg"
+   ]
+  },
+  "38": {
+   "productos": 11,
+   "hojas": [
+    "tallas/bano-38-1.jpg"
+   ]
+  },
+  "40": {
+   "productos": 5,
+   "hojas": [
+    "tallas/bano-40-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 1,
+   "hojas": [
+    "tallas/bano-l-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 1,
+   "hojas": [
+    "tallas/bano-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 1,
+   "hojas": [
+    "tallas/bano-xl-1.jpg"
+   ]
+  },
+  "XXL": {
+   "productos": 1,
+   "hojas": [
+    "tallas/bano-xxl-1.jpg"
+   ]
+  }
+ },
+ "bikinis": {
+  "todo": {
+   "productos": 1,
+   "hojas": [
+    "tallas/bikinis-todo-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 16,
+   "hojas": [
+    "tallas/bikinis-l-1.jpg",
+    "tallas/bikinis-l-2.jpg"
+   ]
+  },
+  "M": {
+   "productos": 17,
+   "hojas": [
+    "tallas/bikinis-m-1.jpg",
+    "tallas/bikinis-m-2.jpg"
+   ]
+  },
+  "S": {
+   "productos": 17,
+   "hojas": [
+    "tallas/bikinis-s-1.jpg",
+    "tallas/bikinis-s-2.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 18,
+   "hojas": [
+    "tallas/bikinis-xl-1.jpg",
+    "tallas/bikinis-xl-2.jpg"
+   ]
+  },
+  "XS": {
+   "productos": 8,
+   "hojas": [
+    "tallas/bikinis-xs-1.jpg"
+   ]
+  }
+ },
+ "billeteras": {
+  "todo": {
+   "productos": 8,
+   "hojas": [
+    "tallas/billeteras-todo-1.jpg"
+   ]
+  },
+  "Única": {
+   "productos": 3,
+   "hojas": [
+    "tallas/billeteras-unica-1.jpg"
+   ]
+  }
+ },
+ "bividis": {
+  "L": {
+   "productos": 11,
+   "hojas": [
+    "tallas/bividis-l-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 9,
+   "hojas": [
+    "tallas/bividis-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 5,
+   "hojas": [
+    "tallas/bividis-xl-1.jpg"
+   ]
+  }
+ },
+ "bodyboards": {
+  "todo": {
+   "productos": 6,
+   "hojas": [
+    "tallas/bodyboards-todo-1.jpg"
+   ]
+  }
+ },
+ "camisas": {
+  "L": {
+   "productos": 7,
+   "hojas": [
+    "tallas/camisas-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 4,
+   "hojas": [
+    "tallas/camisas-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 10,
+   "hojas": [
+    "tallas/camisas-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 7,
+   "hojas": [
+    "tallas/camisas-xl-1.jpg"
+   ]
+  }
+ },
+ "canguros": {
+  "todo": {
+   "productos": 16,
+   "hojas": [
+    "tallas/canguros-todo-1.jpg",
+    "tallas/canguros-todo-2.jpg"
+   ]
+  }
+ },
+ "casacas": {
+  "L": {
+   "productos": 4,
+   "hojas": [
+    "tallas/casacas-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 5,
+   "hojas": [
+    "tallas/casacas-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 7,
+   "hojas": [
+    "tallas/casacas-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 10,
+   "hojas": [
+    "tallas/casacas-xl-1.jpg"
+   ]
+  }
+ },
+ "gorras": {
+  "todo": {
+   "productos": 43,
+   "hojas": [
+    "tallas/gorras-todo-1.jpg",
+    "tallas/gorras-todo-2.jpg",
+    "tallas/gorras-todo-3.jpg",
+    "tallas/gorras-todo-4.jpg"
+   ],
+   "marcas": {
+    "O'Neill": {
+     "productos": 32,
+     "hojas": [
+      "tallas/gorras-todo-o-neill-1.jpg",
+      "tallas/gorras-todo-o-neill-2.jpg",
+      "tallas/gorras-todo-o-neill-3.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 1,
+     "hojas": [
+      "tallas/gorras-todo-oakley-1.jpg"
+     ]
+    },
+    "Quiksilver": {
+     "productos": 3,
+     "hojas": [
+      "tallas/gorras-todo-quiksilver-1.jpg"
+     ]
+    },
+    "VEECE": {
+     "productos": 2,
+     "hojas": [
+      "tallas/gorras-todo-veece-1.jpg"
+     ]
+    }
+   }
+  },
+  "L": {
+   "productos": 15,
+   "hojas": [
+    "tallas/gorras-l-1.jpg",
+    "tallas/gorras-l-2.jpg"
+   ]
+  },
+  "M": {
+   "productos": 4,
+   "hojas": [
+    "tallas/gorras-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 4,
+   "hojas": [
+    "tallas/gorras-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 15,
+   "hojas": [
+    "tallas/gorras-xl-1.jpg",
+    "tallas/gorras-xl-2.jpg"
+   ]
+  },
+  "Única": {
+   "productos": 7,
+   "hojas": [
+    "tallas/gorras-unica-1.jpg"
+   ]
+  }
+ },
+ "joggers": {
+  "L": {
+   "productos": 5,
+   "hojas": [
+    "tallas/joggers-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 5,
+   "hojas": [
+    "tallas/joggers-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 4,
+   "hojas": [
+    "tallas/joggers-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 4,
+   "hojas": [
+    "tallas/joggers-xl-1.jpg"
+   ]
+  }
+ },
+ "lentes": {
+  "todo": {
+   "productos": 37,
+   "hojas": [
+    "tallas/lentes-todo-1.jpg",
+    "tallas/lentes-todo-2.jpg",
+    "tallas/lentes-todo-3.jpg",
+    "tallas/lentes-todo-4.jpg"
+   ],
+   "marcas": {
+    "Arnette": {
+     "productos": 10,
+     "hojas": [
+      "tallas/lentes-todo-arnette-1.jpg"
+     ]
+    },
+    "Bolle": {
+     "productos": 4,
+     "hojas": [
+      "tallas/lentes-todo-bolle-1.jpg"
+     ]
+    },
+    "Dragon": {
+     "productos": 7,
+     "hojas": [
+      "tallas/lentes-todo-dragon-1.jpg"
+     ]
+    },
+    "O'Neill": {
+     "productos": 9,
+     "hojas": [
+      "tallas/lentes-todo-o-neill-1.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 4,
+     "hojas": [
+      "tallas/lentes-todo-oakley-1.jpg"
+     ]
+    }
+   }
+  }
+ },
+ "licras": {
+  "10": {
+   "productos": 9,
+   "hojas": [
+    "tallas/licras-10-1.jpg"
+   ]
+  },
+  "12": {
+   "productos": 4,
+   "hojas": [
+    "tallas/licras-12-1.jpg"
+   ]
+  },
+  "14": {
+   "productos": 3,
+   "hojas": [
+    "tallas/licras-14-1.jpg"
+   ]
+  },
+  "16": {
+   "productos": 6,
+   "hojas": [
+    "tallas/licras-16-1.jpg"
+   ]
+  },
+  "2": {
+   "productos": 3,
+   "hojas": [
+    "tallas/licras-2-1.jpg"
+   ]
+  },
+  "4": {
+   "productos": 4,
+   "hojas": [
+    "tallas/licras-4-1.jpg"
+   ]
+  },
+  "6": {
+   "productos": 6,
+   "hojas": [
+    "tallas/licras-6-1.jpg"
+   ]
+  },
+  "8": {
+   "productos": 11,
+   "hojas": [
+    "tallas/licras-8-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 9,
+   "hojas": [
+    "tallas/licras-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 6,
+   "hojas": [
+    "tallas/licras-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 5,
+   "hojas": [
+    "tallas/licras-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 2,
+   "hojas": [
+    "tallas/licras-xl-1.jpg"
+   ]
+  }
+ },
+ "manga-larga": {
+  "2XS": {
+   "productos": 6,
+   "hojas": [
+    "tallas/manga-larga-2xs-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 16,
+   "hojas": [
+    "tallas/manga-larga-l-1.jpg",
+    "tallas/manga-larga-l-2.jpg"
+   ]
+  },
+  "M": {
+   "productos": 17,
+   "hojas": [
+    "tallas/manga-larga-m-1.jpg",
+    "tallas/manga-larga-m-2.jpg"
+   ]
+  },
+  "S": {
+   "productos": 9,
+   "hojas": [
+    "tallas/manga-larga-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 4,
+   "hojas": [
+    "tallas/manga-larga-xl-1.jpg"
+   ]
+  },
+  "XS": {
+   "productos": 7,
+   "hojas": [
+    "tallas/manga-larga-xs-1.jpg"
+   ]
+  }
+ },
+ "mochilas": {
+  "todo": {
+   "productos": 27,
+   "hojas": [
+    "tallas/mochilas-todo-1.jpg",
+    "tallas/mochilas-todo-2.jpg",
+    "tallas/mochilas-todo-3.jpg"
+   ],
+   "marcas": {
+    "O'Neill": {
+     "productos": 15,
+     "hojas": [
+      "tallas/mochilas-todo-o-neill-1.jpg",
+      "tallas/mochilas-todo-o-neill-2.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 8,
+     "hojas": [
+      "tallas/mochilas-todo-oakley-1.jpg"
+     ]
+    }
+   }
+  }
+ },
+ "poleras": {
+  "2XS": {
+   "productos": 4,
+   "hojas": [
+    "tallas/poleras-2xs-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 22,
+   "hojas": [
+    "tallas/poleras-l-1.jpg",
+    "tallas/poleras-l-2.jpg"
+   ]
+  },
+  "M": {
+   "productos": 20,
+   "hojas": [
+    "tallas/poleras-m-1.jpg",
+    "tallas/poleras-m-2.jpg"
+   ]
+  },
+  "S": {
+   "productos": 24,
+   "hojas": [
+    "tallas/poleras-s-1.jpg",
+    "tallas/poleras-s-2.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 7,
+   "hojas": [
+    "tallas/poleras-xl-1.jpg"
+   ]
+  },
+  "XS": {
+   "productos": 5,
+   "hojas": [
+    "tallas/poleras-xs-1.jpg"
+   ]
+  }
+ },
+ "polos": {
+  "L": {
+   "productos": 119,
+   "hojas": [
+    "tallas/polos-l-1.jpg",
+    "tallas/polos-l-2.jpg",
+    "tallas/polos-l-3.jpg",
+    "tallas/polos-l-4.jpg",
+    "tallas/polos-l-5.jpg",
+    "tallas/polos-l-6.jpg",
+    "tallas/polos-l-7.jpg",
+    "tallas/polos-l-8.jpg",
+    "tallas/polos-l-9.jpg",
+    "tallas/polos-l-10.jpg"
+   ],
+   "marcas": {
+    "O'Neill": {
+     "productos": 79,
+     "hojas": [
+      "tallas/polos-l-o-neill-1.jpg",
+      "tallas/polos-l-o-neill-2.jpg",
+      "tallas/polos-l-o-neill-3.jpg",
+      "tallas/polos-l-o-neill-4.jpg",
+      "tallas/polos-l-o-neill-5.jpg",
+      "tallas/polos-l-o-neill-6.jpg",
+      "tallas/polos-l-o-neill-7.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 20,
+     "hojas": [
+      "tallas/polos-l-oakley-1.jpg",
+      "tallas/polos-l-oakley-2.jpg"
+     ]
+    },
+    "Reef": {
+     "productos": 11,
+     "hojas": [
+      "tallas/polos-l-reef-1.jpg"
+     ]
+    },
+    "VEECE": {
+     "productos": 8,
+     "hojas": [
+      "tallas/polos-l-veece-1.jpg"
+     ]
+    }
+   }
+  },
+  "M": {
+   "productos": 90,
+   "hojas": [
+    "tallas/polos-m-1.jpg",
+    "tallas/polos-m-2.jpg",
+    "tallas/polos-m-3.jpg",
+    "tallas/polos-m-4.jpg",
+    "tallas/polos-m-5.jpg",
+    "tallas/polos-m-6.jpg",
+    "tallas/polos-m-7.jpg",
+    "tallas/polos-m-8.jpg"
+   ],
+   "marcas": {
+    "O'Neill": {
+     "productos": 61,
+     "hojas": [
+      "tallas/polos-m-o-neill-1.jpg",
+      "tallas/polos-m-o-neill-2.jpg",
+      "tallas/polos-m-o-neill-3.jpg",
+      "tallas/polos-m-o-neill-4.jpg",
+      "tallas/polos-m-o-neill-5.jpg",
+      "tallas/polos-m-o-neill-6.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 16,
+     "hojas": [
+      "tallas/polos-m-oakley-1.jpg",
+      "tallas/polos-m-oakley-2.jpg"
+     ]
+    },
+    "Reef": {
+     "productos": 1,
+     "hojas": [
+      "tallas/polos-m-reef-1.jpg"
+     ]
+    },
+    "VEECE": {
+     "productos": 10,
+     "hojas": [
+      "tallas/polos-m-veece-1.jpg"
+     ]
+    }
+   }
+  },
+  "S": {
+   "productos": 83,
+   "hojas": [
+    "tallas/polos-s-1.jpg",
+    "tallas/polos-s-2.jpg",
+    "tallas/polos-s-3.jpg",
+    "tallas/polos-s-4.jpg",
+    "tallas/polos-s-5.jpg",
+    "tallas/polos-s-6.jpg",
+    "tallas/polos-s-7.jpg"
+   ],
+   "marcas": {
+    "O'Neill": {
+     "productos": 59,
+     "hojas": [
+      "tallas/polos-s-o-neill-1.jpg",
+      "tallas/polos-s-o-neill-2.jpg",
+      "tallas/polos-s-o-neill-3.jpg",
+      "tallas/polos-s-o-neill-4.jpg",
+      "tallas/polos-s-o-neill-5.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 9,
+     "hojas": [
+      "tallas/polos-s-oakley-1.jpg"
+     ]
+    },
+    "Reef": {
+     "productos": 3,
+     "hojas": [
+      "tallas/polos-s-reef-1.jpg"
+     ]
+    },
+    "VEECE": {
+     "productos": 11,
+     "hojas": [
+      "tallas/polos-s-veece-1.jpg"
+     ]
+    }
+   }
+  },
+  "XL": {
+   "productos": 95,
+   "hojas": [
+    "tallas/polos-xl-1.jpg",
+    "tallas/polos-xl-2.jpg",
+    "tallas/polos-xl-3.jpg",
+    "tallas/polos-xl-4.jpg",
+    "tallas/polos-xl-5.jpg",
+    "tallas/polos-xl-6.jpg",
+    "tallas/polos-xl-7.jpg",
+    "tallas/polos-xl-8.jpg"
+   ],
+   "marcas": {
+    "O'Neill": {
+     "productos": 61,
+     "hojas": [
+      "tallas/polos-xl-o-neill-1.jpg",
+      "tallas/polos-xl-o-neill-2.jpg",
+      "tallas/polos-xl-o-neill-3.jpg",
+      "tallas/polos-xl-o-neill-4.jpg",
+      "tallas/polos-xl-o-neill-5.jpg",
+      "tallas/polos-xl-o-neill-6.jpg"
+     ]
+    },
+    "Oakley": {
+     "productos": 15,
+     "hojas": [
+      "tallas/polos-xl-oakley-1.jpg",
+      "tallas/polos-xl-oakley-2.jpg"
+     ]
+    },
+    "Reef": {
+     "productos": 9,
+     "hojas": [
+      "tallas/polos-xl-reef-1.jpg"
+     ]
+    },
+    "VEECE": {
+     "productos": 9,
+     "hojas": [
+      "tallas/polos-xl-veece-1.jpg"
+     ]
+    }
+   }
+  }
+ },
+ "polos-mujer": {
+  "L": {
+   "productos": 5,
+   "hojas": [
+    "tallas/polos-mujer-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 6,
+   "hojas": [
+    "tallas/polos-mujer-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 10,
+   "hojas": [
+    "tallas/polos-mujer-s-1.jpg"
+   ]
+  },
+  "XL": {
+   "productos": 15,
+   "hojas": [
+    "tallas/polos-mujer-xl-1.jpg",
+    "tallas/polos-mujer-xl-2.jpg"
+   ]
+  }
+ },
+ "polos-nino": {
+  "10": {
+   "productos": 10,
+   "hojas": [
+    "tallas/polos-nino-10-1.jpg"
+   ]
+  },
+  "12": {
+   "productos": 2,
+   "hojas": [
+    "tallas/polos-nino-12-1.jpg"
+   ]
+  },
+  "14": {
+   "productos": 1,
+   "hojas": [
+    "tallas/polos-nino-14-1.jpg"
+   ]
+  },
+  "16": {
+   "productos": 1,
+   "hojas": [
+    "tallas/polos-nino-16-1.jpg"
+   ]
+  },
+  "8": {
+   "productos": 15,
+   "hojas": [
+    "tallas/polos-nino-8-1.jpg",
+    "tallas/polos-nino-8-2.jpg"
+   ]
+  }
+ },
+ "sandalias": {
+  "38": {
+   "productos": 6,
+   "hojas": [
+    "tallas/sandalias-38-1.jpg"
+   ]
+  },
+  "39": {
+   "productos": 15,
+   "hojas": [
+    "tallas/sandalias-39-1.jpg",
+    "tallas/sandalias-39-2.jpg"
+   ]
+  },
+  "40": {
+   "productos": 13,
+   "hojas": [
+    "tallas/sandalias-40-1.jpg",
+    "tallas/sandalias-40-2.jpg"
+   ]
+  },
+  "41": {
+   "productos": 12,
+   "hojas": [
+    "tallas/sandalias-41-1.jpg"
+   ]
+  },
+  "42": {
+   "productos": 6,
+   "hojas": [
+    "tallas/sandalias-42-1.jpg"
+   ]
+  },
+  "43": {
+   "productos": 8,
+   "hojas": [
+    "tallas/sandalias-43-1.jpg"
+   ]
+  },
+  "44": {
+   "productos": 7,
+   "hojas": [
+    "tallas/sandalias-44-1.jpg"
+   ]
+  },
+  "45": {
+   "productos": 9,
+   "hojas": [
+    "tallas/sandalias-45-1.jpg"
+   ]
+  }
+ },
+ "sandalias-mujer": {
+  "35": {
+   "productos": 2,
+   "hojas": [
+    "tallas/sandalias-mujer-35-1.jpg"
+   ]
+  },
+  "36": {
+   "productos": 11,
+   "hojas": [
+    "tallas/sandalias-mujer-36-1.jpg"
+   ]
+  },
+  "37": {
+   "productos": 11,
+   "hojas": [
+    "tallas/sandalias-mujer-37-1.jpg"
+   ]
+  },
+  "38": {
+   "productos": 12,
+   "hojas": [
+    "tallas/sandalias-mujer-38-1.jpg"
+   ]
+  },
+  "39": {
+   "productos": 12,
+   "hojas": [
+    "tallas/sandalias-mujer-39-1.jpg"
+   ]
+  },
+  "40": {
+   "productos": 9,
+   "hojas": [
+    "tallas/sandalias-mujer-40-1.jpg"
+   ]
+  },
+  "41": {
+   "productos": 1,
+   "hojas": [
+    "tallas/sandalias-mujer-41-1.jpg"
+   ]
+  }
+ },
+ "sandalias-nino": {
+  "28": {
+   "productos": 1,
+   "hojas": [
+    "tallas/sandalias-nino-28-1.jpg"
+   ]
+  }
+ },
+ "shorts": {
+  "30": {
+   "productos": 3,
+   "hojas": [
+    "tallas/shorts-30-1.jpg"
+   ]
+  },
+  "32": {
+   "productos": 4,
+   "hojas": [
+    "tallas/shorts-32-1.jpg"
+   ]
+  },
+  "34": {
+   "productos": 3,
+   "hojas": [
+    "tallas/shorts-34-1.jpg"
+   ]
+  },
+  "36": {
+   "productos": 2,
+   "hojas": [
+    "tallas/shorts-36-1.jpg"
+   ]
+  },
+  "38": {
+   "productos": 3,
+   "hojas": [
+    "tallas/shorts-38-1.jpg"
+   ]
+  },
+  "40": {
+   "productos": 1,
+   "hojas": [
+    "tallas/shorts-40-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 1,
+   "hojas": [
+    "tallas/shorts-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 2,
+   "hojas": [
+    "tallas/shorts-m-1.jpg"
+   ]
+  },
+  "S": {
+   "productos": 2,
+   "hojas": [
+    "tallas/shorts-s-1.jpg"
+   ]
+  }
+ },
+ "wetsuits": {
+  "3": {
+   "productos": 1,
+   "hojas": [
+    "tallas/wetsuits-3-1.jpg"
+   ]
+  },
+  "4": {
+   "productos": 1,
+   "hojas": [
+    "tallas/wetsuits-4-1.jpg"
+   ]
+  },
+  "L": {
+   "productos": 1,
+   "hojas": [
+    "tallas/wetsuits-l-1.jpg"
+   ]
+  },
+  "M": {
+   "productos": 1,
+   "hojas": [
+    "tallas/wetsuits-m-1.jpg"
+   ]
+  }
+ },
+ "zapatillas": {
+  "39": {
+   "productos": 7,
+   "hojas": [
+    "tallas/zapatillas-39-1.jpg"
+   ]
+  },
+  "40": {
+   "productos": 4,
+   "hojas": [
+    "tallas/zapatillas-40-1.jpg"
+   ]
+  },
+  "41": {
+   "productos": 2,
+   "hojas": [
+    "tallas/zapatillas-41-1.jpg"
+   ]
+  },
+  "42": {
+   "productos": 1,
+   "hojas": [
+    "tallas/zapatillas-42-1.jpg"
+   ]
+  },
+  "43": {
+   "productos": 2,
+   "hojas": [
+    "tallas/zapatillas-43-1.jpg"
+   ]
+  },
+  "44": {
+   "productos": 5,
+   "hojas": [
+    "tallas/zapatillas-44-1.jpg"
+   ]
+  },
+  "45": {
+   "productos": 5,
+   "hojas": [
+    "tallas/zapatillas-45-1.jpg"
+   ]
+  },
+  "9.5": {
+   "productos": 1,
+   "hojas": [
+    "tallas/zapatillas-9-5-1.jpg"
+   ]
+  }
+ }
+}
