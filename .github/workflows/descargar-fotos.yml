@@ -85,6 +85,11 @@ jobs:
               "https://cdn.shopify.com/s/files/1/0617/8180/3180/files/Banner_Shopify_3.jpg?width=2000" \
               -o fotos/portada/banner.jpg
           fi
+          if [ ! -s fotos/portada/lentes-agua.jpg ]; then
+            curl -sfL --retry 3 --max-time 90 \
+              "https://cdn.shopify.com/s/files/1/0617/8180/3180/files/71107017_2851571394871533_1208185085027680256_n.jpg?width=1600" \
+              -o fotos/portada/lentes-agua.jpg
+          fi
           if [ ! -s fotos/portada/preview.jpg ]; then
             curl -sfL --retry 3 --max-time 90 \
               "https://cdn.shopify.com/s/files/1/0617/8180/3180/files/Banner_Shopify_3.jpg?width=1200" \
