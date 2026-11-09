@@ -33,7 +33,7 @@ jobs:
       - name: Pedir todas las fotos al sitio en vivo
         run: |
           python3 - <<'PY'
-          import json, os, re, sys, urllib.parse, urllib.request
+          import json, os, re, sys, time, urllib.parse, urllib.request
           from concurrent.futures import ThreadPoolExecutor
 
           SITIO = 'https://innervisionpe.github.io/'
@@ -63,14 +63,24 @@ jobs:
               print(f'mas {len(rutas) - antes} hojas por talla')
           rutas.add('tallas/indice.json')
 
-          def pedir(r):
+          def una_vez(r):
               url = SITIO + urllib.parse.quote(r)
               try:
                   p = urllib.request.Request(url, method='HEAD',
                                              headers={'User-Agent': 'revisor-oneill'})
-                  return r, urllib.request.urlopen(p, timeout=30).status
+                  return urllib.request.urlopen(p, timeout=30).status
               except Exception as e:
-                  return r, getattr(e, 'code', str(e))
+                  return getattr(e, 'code', str(e))
+
+          def pedir(r):
+              """Un 404 es una foto que falta de verdad. Un 503 o un corte de
+              conexion suele ser el servidor tropezando: eso se reintenta,
+              para no avisar en falso y que despues nadie nos crea."""
+              c = una_vez(r)
+              if c != 200 and c != 404:
+                  time.sleep(4)
+                  c = una_vez(r)
+              return r, c
 
           malas = []
           with ThreadPoolExecutor(10) as ex:
