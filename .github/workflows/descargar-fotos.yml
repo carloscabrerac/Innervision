@@ -30,6 +30,11 @@ jobs:
           BASE="https://cdn.shopify.com/s/files/1/0617/8180/3180"
           ANCHO=1000
           mkdir -p fotos/files fotos/products
+          # OJO: las fotos del repositorio estan optimizadas (760 px, JPEG q78
+          # o WebP cuando tienen fondo transparente) y algunas cambiaron de
+          # extension. Si vuelves a correr esto, revisa despues el peso total:
+          # GitHub Pages aborta el despliegue si el sitio pesa demasiado.
+          # Con 70 MB fallo; con 28 MB funciona.
 
           bajar() {
             ruta="$1"
