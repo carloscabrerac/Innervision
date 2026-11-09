@@ -172,6 +172,29 @@ def armar(productos, categoria, talla, hoja, de_hojas, marca=''):
     return im
 
 
+def tabla(indice):
+    """Escribe la tabla en texto plano que se pega en la Base de Conocimiento
+    de GoHighLevel. Es lo que el bot consulta para saber que imagen mandar."""
+    B = 'https://innervisionpe.github.io/'
+    L = ['TABLA DE FOTOS POR TALLA — O\'NEILL CHICLAYO',
+         'Generada por hojas.py. No editar a mano: se rehace sola.', '']
+    for cat in sorted(indice):
+        L.append(f'### {NOMBRES.get(cat, cat).upper()}  (clave: {cat})')
+        for talla, e in sorted(indice[cat].items()):
+            h = e['hojas']
+            et = 'sin talla' if talla == 'todo' else f'talla {talla}'
+            L.append(f'- {et} — {e["productos"]} producto(s), '
+                     f'{len(h)} hoja(s) -> {B}{h[0]}')
+            if len(h) > 1:
+                sig = ', '.join(B + x for x in h[1:3])
+                L.append(f'    siguientes: {sig}' + (' ...' if len(h) > 3 else ''))
+            for m, d in sorted(e.get('marcas', {}).items()):
+                L.append(f'    solo {m} ({d["productos"]}) -> {B}{d["hojas"][0]}')
+        L.append('')
+    ruta = os.path.join(RAIZ, 'innervision', 'tabla-del-bot.txt')
+    open(ruta, 'w', encoding='utf-8').write('\n'.join(L))
+
+
 def main():
     datos = json.load(open(os.path.join(RAIZ, 'datos.json'), encoding='utf-8'))
     os.makedirs(SALIDA, exist_ok=True)
@@ -231,6 +254,7 @@ def main():
 
     with open(os.path.join(SALIDA, 'indice.json'), 'w', encoding='utf-8') as f:
         json.dump(indice, f, ensure_ascii=False, indent=1)
+    tabla(indice)
 
     print(f'{len(pesos)} hojas · {sum(pesos)/1048576:.1f} MB · '
           f'promedio {sum(pesos)/len(pesos)/1024:.0f} KB · '
