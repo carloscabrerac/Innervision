@@ -13,6 +13,7 @@ on:
     paths:
       - 'index.html'
       - 'fotos/**'
+      - 'tallas/**'
       - '.github/workflows/revisar-fotos.yml'
   schedule:
     - cron: '37 13 * * 1'   # lunes, para que no se nos pase
@@ -32,7 +33,7 @@ jobs:
       - name: Pedir todas las fotos al sitio en vivo
         run: |
           python3 - <<'PY'
-          import re, sys, urllib.parse, urllib.request
+          import json, os, re, sys, urllib.parse, urllib.request
           from concurrent.futures import ThreadPoolExecutor
 
           SITIO = 'https://innervisionpe.github.io/'
@@ -48,6 +49,19 @@ jobs:
               print(f'ALTO: solo encontre {len(rutas)} fotos en index.html.')
               print('Deberian ser mas de 600. Algo se rompio al construir la pagina.')
               sys.exit(1)
+
+          # Las hojas por talla: son las que el bot le manda al cliente, asi
+          # que si una no responde el cliente se queda sin ver el producto.
+          if os.path.exists('tallas/indice.json'):
+              ind = json.load(open('tallas/indice.json', encoding='utf-8'))
+              antes = len(rutas)
+              for tallas in ind.values():
+                  for e in tallas.values():
+                      rutas.update(e['hojas'])
+                      for m in e.get('marcas', {}).values():
+                          rutas.update(m['hojas'])
+              print(f'mas {len(rutas) - antes} hojas por talla')
+          rutas.add('tallas/indice.json')
 
           def pedir(r):
               url = SITIO + urllib.parse.quote(r)
