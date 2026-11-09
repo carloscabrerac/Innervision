@@ -39,8 +39,10 @@ jobs:
           bajar() {
             ruta="$1"
             destino="fotos/$ruta"
-            # si ya existe y pesa algo, no la vuelve a bajar
-            if [ -s "$destino" ]; then
+            sinext="fotos/${ruta%.*}"
+            # Ya la tenemos si existe en cualquiera de sus formas: la original
+            # o la optimizada, que puede haber cambiado de extension.
+            if [ -s "$destino" ] || [ -s "$sinext.jpg" ] || [ -s "$sinext.webp" ]; then
               echo "ok-cache $ruta"
               return 0
             fi
@@ -96,6 +98,44 @@ jobs:
               -o fotos/portada/preview.jpg
           fi
           ls -lh fotos/portada
+
+      - name: Optimizar las fotos nuevas
+        run: |
+          python3 -m pip install --quiet --upgrade Pillow
+          python3 - <<'PY'
+          # Deja cada foto a 760 px de ancho: JPEG q78, o WebP si tiene fondo
+          # transparente, para que el sitio no se pase del peso que GitHub
+          # Pages acepta. Solo toca las que todavia estan sin optimizar.
+          from PIL import Image
+          import os
+          MAX = 760
+          for r, _, fs in os.walk('fotos'):
+              if 'portada' in r:      # las de portada van en grande a proposito
+                  continue
+              for f in fs:
+                  p = os.path.join(r, f)
+                  base, ext = os.path.splitext(p)
+                  ext = ext.lower()
+                  try:
+                      im = Image.open(p)
+                  except Exception:
+                      continue
+                  alfa = im.mode in ('RGBA', 'LA') or (im.mode == 'P' and 'transparency' in im.info)
+                  destino = base + ('.webp' if alfa else '.jpg')
+                  # ya esta en su forma final y en tamano: no la toques
+                  if p == destino and im.width <= MAX:
+                      continue
+                  if im.width > MAX:
+                      im = im.resize((MAX, round(im.height * MAX / im.width)), Image.LANCZOS)
+                  if alfa:
+                      im.convert('RGBA').save(destino, 'WEBP', quality=82, method=6)
+                  else:
+                      im.convert('RGB').save(destino, 'JPEG', quality=78, optimize=True, progressive=True)
+                  if destino != p:
+                      os.remove(p)
+                  print('optimizada', destino)
+          PY
+          echo "peso final: $(du -sh fotos | cut -f1)"
 
       - name: Guardar en el repositorio
         run: |
