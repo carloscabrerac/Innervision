@@ -51,6 +51,8 @@ jobs:
                  "$BASE/$ruta?width=$ANCHO" -o "$destino.tmp"; then
               if [ -s "$destino.tmp" ]; then
                 mv "$destino.tmp" "$destino"
+                # Apuntamos solo las nuevas: son las unicas que se optimizan.
+                echo "$destino" >> nuevas.txt
                 echo "ok $ruta"
                 return 0
               fi
@@ -63,6 +65,7 @@ jobs:
           export BASE ANCHO
 
           : > fallos.txt
+          : > nuevas.txt
           # 8 descargas en paralelo
           tr -d '\r' < lista-fotos.txt | grep -v '^[[:space:]]*$' \
             | xargs -I{} -P 8 bash -c 'bajar "$@"' _ {} > /dev/null
@@ -101,40 +104,52 @@ jobs:
 
       - name: Optimizar las fotos nuevas
         run: |
+          if [ ! -s nuevas.txt ]; then
+            echo "No bajamos ninguna foto nueva: no hay nada que optimizar."
+            exit 0
+          fi
           python3 -m pip install --quiet --upgrade Pillow
           python3 - <<'PY'
-          # Deja cada foto a 760 px de ancho: JPEG q78, o WebP si tiene fondo
-          # transparente, para que el sitio no se pase del peso que GitHub
-          # Pages acepta. Solo toca las que todavia estan sin optimizar.
+          # Deja cada foto nueva a 760 px de ancho y en JPEG q78, para que el
+          # sitio no se pase del peso que GitHub Pages acepta (con 70 MB el
+          # despliegue falla; con 28 MB funciona).
+          #
+          # DOS REGLAS QUE NO SE TOCAN:
+          #  1. Solo se optimizan las fotos bajadas en esta corrida
+          #     (nuevas.txt). Las que ya estan en el repositorio NO se tocan:
+          #     la pagina las nombra una por una y si les cambias la extension
+          #     se rompen 50 fotos de golpe. Ya paso una vez.
+          #  2. Todas salen en .jpg, sin excepcion. Una sola extension para
+          #     todo el catalogo: nada que adivinar ni que se desincronice.
+          #     Las transparentes se aplanan sobre el gris del fondo del sitio.
           from PIL import Image
           import os
           MAX = 760
-          for r, _, fs in os.walk('fotos'):
-              if 'portada' in r:      # las de portada van en grande a proposito
+          FONDO = (245, 245, 243)   # --hum del sitio, el gris de las fichas
+          for p in [l.strip() for l in open('nuevas.txt') if l.strip()]:
+              if not os.path.isfile(p) or '/portada/' in p:
                   continue
-              for f in fs:
-                  p = os.path.join(r, f)
-                  base, ext = os.path.splitext(p)
-                  ext = ext.lower()
-                  try:
-                      im = Image.open(p)
-                  except Exception:
-                      continue
-                  alfa = im.mode in ('RGBA', 'LA') or (im.mode == 'P' and 'transparency' in im.info)
-                  destino = base + ('.webp' if alfa else '.jpg')
-                  # ya esta en su forma final y en tamano: no la toques
-                  if p == destino and im.width <= MAX:
-                      continue
-                  if im.width > MAX:
-                      im = im.resize((MAX, round(im.height * MAX / im.width)), Image.LANCZOS)
-                  if alfa:
-                      im.convert('RGBA').save(destino, 'WEBP', quality=82, method=6)
-                  else:
-                      im.convert('RGB').save(destino, 'JPEG', quality=78, optimize=True, progressive=True)
-                  if destino != p:
-                      os.remove(p)
-                  print('optimizada', destino)
+              base, _ = os.path.splitext(p)
+              destino = base + '.jpg'
+              try:
+                  im = Image.open(p)
+              except Exception as e:
+                  print('no se pudo abrir', p, e)
+                  continue
+              if im.width > MAX:
+                  im = im.resize((MAX, round(im.height * MAX / im.width)), Image.LANCZOS)
+              if im.mode in ('RGBA', 'LA') or (im.mode == 'P' and 'transparency' in im.info):
+                  fondo = Image.new('RGB', im.size, FONDO)
+                  im = im.convert('RGBA')
+                  fondo.paste(im, mask=im.split()[-1])
+                  im = fondo
+              im.convert('RGB').save(destino, 'JPEG', quality=78,
+                                     optimize=True, progressive=True)
+              if destino != p:
+                  os.remove(p)
+              print('optimizada', destino)
           PY
+          rm -f nuevas.txt
           echo "peso final: $(du -sh fotos | cut -f1)"
 
       - name: Guardar en el repositorio
